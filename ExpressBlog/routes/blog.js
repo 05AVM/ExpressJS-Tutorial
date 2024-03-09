@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');//Require the path module
+const blogs = require('../data/blogs.js'); // Import the blogs data
 
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'..', 'templates', 'index.html'));//Provide the correct path to the HTML file
+   // res.sendFile(path.join(__dirname,'..', 'templates', 'index.html'));//Provide the correct path to the HTML file
+
+   res.render('../home')
 });
 
 router.get('/blog', (req, res) => {
